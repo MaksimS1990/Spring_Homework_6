@@ -41,7 +41,7 @@ public class NoteController {
      * @return возврается найденная заметка либо null
      */
     @GetMapping("/{id}")
-    public ResponseEntity<?> findById(@PathVariable Long id) {
+    public ResponseEntity<?> findById(@PathVariable Long id) {          //<?> возвраемое значание может быть любого типа
         Note note = repository.findById(id).orElse(null);
         if (note != null) {
             return new ResponseEntity<>(note, HttpStatus.FOUND);
